@@ -92,7 +92,7 @@ sixit/core is a HEADER-ONLY LIB, no build is really necessary.
 NB: we MAY consider generating a non-header-only version, IF there is a SUBSTANTIAL demand for it. Note, however, that (a) template stuff (and we have LOTS of it) has to stay in headers, AND (b) moving this kind of small things to .cpps tends to hurt performance a bit (due to lack of inlining), which may or may not be eliminated by specifying LTO.
 - we also will provide a separate sixit-core-test lib. 
 
-## Plans for v0,0.2
+## Plans for v0.0.2
 - further code cleanup
 - additional loggers: file logger, combining adapter, optional wrapper for spdlog. 
 
@@ -105,7 +105,7 @@ NB: we MAY consider generating a non-header-only version, IF there is a SUBSTANT
 - sixit/physics - simple physics, with cross-platform deterministic support
    + currently only rigid body physics , but we plan to add more
 - sixit/osal - os abstraction library; abstracts less common features which are not a part of the std:: (yet?).
-- sixit/wasm - abstracting wasm engines (the same host can use any of supported engines, with adding more being easy)
+- sixit/wasm - abstracting wasm engines (the same host can use any of supported engines, from wasm3 to wasm2c, with adding more being easy)
 
 ### CI
 - sixit/sarge: opinionated CI which is C++-aware, tightly integrated with build, has a pre-merge CI check option (prevents BS from ever getting into your trunk, HIGHLY recommended), supports build in identical VMs, and supports our "cpp-tight-ship" development model with lots of guideline checks (can be adjusted to your needs). Sarge is highly modular too.
