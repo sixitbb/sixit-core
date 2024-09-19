@@ -12,7 +12,7 @@ We are currently at version 0.0.1, and we will NOT commit to APIs being stable a
 - sixit/profiler - a library for cross-platform performance measurements, especially oriented towards production (!) - with planned ways to provide the data for Zabbix/Nagios. Has very cheap sensors (RDTSC-like) for all supported CPUs, except for WASM.
 - sixit/logger.h - concept of logger (we do not force logger down your throat, you can use whatever you want - as long as it conforms to logger concept). We also provide basic loggers ourselves (see also on v0.0.2 below)
 - sixit/compileral - compiler isolation layer. Currently very small (but still provides valuable stuff such as printable and supposedly-consistent-across-compilers printing of typeid).
-- sixit/units - a mini-lib to support measurement units, and most importanly - [Dimension analysis](https://en.wikipedia.org/wiki/Dimensional_analysis), which we're using in places such as sixit/geometry and sixit/physics (see below).
+- sixit/units - a mini-lib to support measurement units, and most importanly - [Dimension analysis](https://en.wikipedia.org/wiki/Dimensional_analysis), which we're using in places such as sixit/geometry and sixit/physics (see [sixit](https://github.com/sixitbb)).
 - sixit/containers - some of our custom containers, which include such things (not necessarily released yet) as index-preserving-deque, map-with-best-O(1)-case-and-worst-O(log(N))-case, unordered-map-with-guaranteed-O(1) (especially useful in compile-time), and so on. 
 - sixit/testing - a micro-framework for fully cross-platform testing aimed at CI regression testing, inspired by lest.
 
