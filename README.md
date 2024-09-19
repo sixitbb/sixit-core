@@ -11,11 +11,11 @@ In our speak, "platform" = "CPU+Compiler+OS".
 - x64
 - ARM64
 - RISC-V64
-- WASM32
+- WASM32 (that WASM which you can run anywhere these days; supports 64-bit arithmetics but sizeof(void*) is still 4)
 
 Planned:
 - s390x
-- WASM64
+- WASM64 (as soon as there is realistic support for Memory64)
 - Power
 
 NOT planned by ourselves, but we welcome pull requests as long as they're concentrated within sixit/cpual;
@@ -31,15 +31,15 @@ NOT likely:
 - legacy CPUs/MCUs which are not supported by more-or-less-recent stock C++ compilers (such as AVR8)
 
 ### Supported Compilers:
-- Clang starting from 12.x (we hope to add support starting from 10.x too, less in unlikely)
-- MSVC starting from _MSC_VER=19.32 (we hope to add support for 19.29 too, less in unlikely)
-- GCC starting from 11.x (we hope to add support for 10.x too, less in unlikely)
+- Clang starting from 12.x (we hope to add support starting from 10.x too, going further back in time in unlikely)
+- MSVC starting from _MSC_VER=19.32 (we hope to add support for 19.29 too, going further back in time in unlikely)
+- GCC starting from 11.x (we hope to add support for 10.x too, going further back in time in unlikely)
 
-NOT planned by ourselves, but we welcome pull requests as long as they're NOT spread all over the lib, AND you have working box to run CI on (!):
-- ICX, NVCC, newer (Clang-based) XLC, any other Clang-frontend-based
+NOT planned by ourselves ATM, but we welcome pull requests as long as they're NOT spread all over the lib, AND you have working box to run CI on (!):
+- ICX, NVCC, newer (Clang-based) XlC, any other Clang-frontend-based
 
 Unlikely:
-- legacy custom-frontend-based compilers, such as ICC, pre-clang-XLC, etc.
+- legacy custom-frontend-based compilers, such as ICC, pre-clang-XlC, etc.
 
 ### Supported OSs:
 - Linux
@@ -62,7 +62,7 @@ sixit/sarge CI Tier 1 (cannot merge to trunk unless CI passes):
 - Linux/x64/GCC 11.3
 - Linux/x64/Clang 12
 - Win/x64/MSVC 19.32
-- MacOS/M2/Apple-Clang
+- MacOS/M2/Apple-Clang 15
 - Android/ARM (build only)
 - Android/x64 (build only, adding simulator tests in progress)
 - iOS/ARM (build only)
@@ -84,7 +84,7 @@ Planned:
 - sixit/profiler - a library for cross-platform performance measurements, especially oriented towards production (!) - with planned ways to provide the data for Zabbix/Nagios. Has very cheap sensors (RDTSC-like) for all supported CPUs, except for WASM.
 - sixit/logger.h - concept of logger (we do not force logger down your throat, you can use whatever you want - as long as it conforms to logger concept). We also provide basic loggers ourselves (see also on v0.0.2 below)
 - sixit/compileral - compiler isolation layer. Currently very small (but still provides valuable stuff such as printable and supposedly-consistent-across-compilers printing of typeid).
-- sixit/units - a mini-lib to support measurement units, and most importanly - [Dimension analysis], which we're using in places such as sixit/geometry and sixit/physics (see below).
+- sixit/units - a mini-lib to support measurement units, and most importanly - [Dimension analysis](https://en.wikipedia.org/wiki/Dimensional_analysis), which we're using in places such as sixit/geometry and sixit/physics (see below).
 - sixit/containers - some of our custom containers, which include such things (not necessarily released yet) as index-preserving-deque, map-with-best-O(1)-case-and-worst-O(log(N))-case, unordered-map-with-guaranteed-O(1) (especially useful in compile-time), and so on. 
 - sixit/testing - a micro-framework for fully cross-platform testing aimed at CI regression testing, inspired by lest. 
 
