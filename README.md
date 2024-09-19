@@ -11,20 +11,21 @@ In our speak, "platform" = "CPU+Compiler+OS".
 - x64
 - ARM64
 - RISC-V64
-- WASM32 (that WASM which you can run anywhere these days; supports 64-bit arithmetics but sizeof(void*) is still 4)
+- WASM32 (that WASM virtual CPU which you can run anywhere these days; supports 64-bit arithmetics but sizeof(void*) is still 4)
 
 Planned:
 - s390x
-- WASM64 (as soon as there is realistic support for Memory64)
+- WASM64 (as soon as there is [realistic support](https://webassembly.org/features/) for Memory64)
 - Power
 
 NOT planned by ourselves, but we welcome pull requests as long as they're concentrated within sixit/cpual;
-- legacy 64-bit CPUs such as SPARC, PA-RISC, Itanium - as long as there is at least one recent major compiler supporting them, AND you have a working box to run CI on at least once a week (!).
+- legacy 64-bit CPUs such as SPARC, PA-RISC, Itanium, MIPS64 - as long as there is at least one recent major compiler supporting them, AND you have a working box to run CI on at least once a week (!).
 
 NOT planned by ourselves, but we welcome pull requests, as long as you have working box to run CI on (!); note, however, that they're unlikely to be 100% optimal (lots of sixit:: code is optimized for 64-bit arithmetics):
 - x86
 - ARM32
 - RISC-V32
+- MIPS-32
 - anything-else which has a standard C++ compiler
 
 NOT likely:
