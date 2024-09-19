@@ -17,7 +17,7 @@ We are currently at version 0.0.1, and we will NOT commit to APIs being stable a
 - sixit/testing - a micro-framework for fully cross-platform testing aimed at CI regression testing, inspired by lest.
 
 ## Supported Platforms
-We're currently supporting 4 CPU architectures, 3 compilers, and 5 operating systems (with more WIP/Planned). For details, please refer to [Supported platforms for sixit C++ Libs](https://github.com/sixitbb/.github/blob/main/profile/cpp-supported-platforms.md).
+In our speak, "platform" = "CPU+Compiler+OS". Currently, we're supporting {x64|ARM64|RISC-V64|WASM32}, {Clang|MSVC|GCC}, and {Android|iOS|Linux|MacOS|Windows|WASM}. For details, please refer to [Supported platforms for sixit C++ Libs](https://github.com/sixitbb/.github/blob/main/profile/cpp-supported-platforms.md).
 
 ## Building
 sixit/core is a HEADER-ONLY LIB, no build is really necessary. 
