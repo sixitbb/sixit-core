@@ -19,7 +19,7 @@ Planned:
 - Power
 
 NOT planned by ourselves, but we welcome pull requests as long as they're concentrated within sixit/cpual;
-- legacy 64-bit CPUs such as SPARC, PA-RISC, even Itanium - as long as there is at least one recent major compiler supporting them, AND you have a working box to run CI on (!).
+- legacy 64-bit CPUs such as SPARC, PA-RISC, Itanium - as long as there is at least one recent major compiler supporting them, AND you have a working box to run CI on at least once a week (!).
 
 NOT planned by ourselves, but we welcome pull requests, as long as you have working box to run CI on (!); note, however, that they're unlikely to be 100% optimal (lots of sixit:: code is optimized for 64-bit arithmetics):
 - x86
@@ -31,9 +31,9 @@ NOT likely:
 - legacy CPUs/MCUs which are not supported by more-or-less-recent stock C++ compilers (such as AVR8)
 
 ### Supported Compilers:
-- Clang starting from 12.x (we hope to add support starting from 10.x too, going further back in time in unlikely)
-- MSVC starting from _MSC_VER=19.32 (we hope to add support for 19.29 too, going further back in time in unlikely)
-- GCC starting from 11.x (we hope to add support for 10.x too, going further back in time in unlikely)
+- Clang starting from 12.x (we hope to add support starting from 10.x too, going further back in time is unlikely)
+- MSVC starting from _MSC_VER=19.32 (we hope to add support for 19.29 too, going further back in time is unlikely)
+- GCC starting from 11.x (we hope to add support for 10.x too, going further back in time is unlikely)
 
 NOT planned by ourselves ATM, but we welcome pull requests as long as they're NOT spread all over the lib, AND you have working box to run CI on (!):
 - ICX, NVCC, newer (Clang-based) XlC, any other Clang-frontend-based
@@ -41,21 +41,24 @@ NOT planned by ourselves ATM, but we welcome pull requests as long as they're NO
 Unlikely:
 - legacy custom-frontend-based compilers, such as ICC, pre-clang-XlC, etc.
 
-### Supported OSs:
-- Linux
-- Windows
-- MacOS X
+### Supported OSs (in alpabetical order):
 - Android
 - iOS
+- Linux
+- MacOS X (both Intel and ARM)
+- Windows
+
+WIP:
+- WASM/Browser (whatever emscripten provides when running within browser)
+- WASM/Sandbox (our own [quecto](https://en.wikipedia.org/w/index.php?title=Quecto)-pseudo-OS to run purely-computing things; designed to be unable to hurt the host)
 
 Planned:
 - FreeBSD
-- WASM/Sandbox (our own pseudo-OS to run purely-computing things)
 - WASM/WASI
 - Consoles (XBox/PS/Switch)
 
 NOT planned by ourselves, but we welcome pull requests as long as they're concentrated within sixit/osal (to be released soon, see below);
-- pretty much anything which makes at least sense - AND for which you have working box to test it on (!).
+- pretty much anything which makes at least some sense - as long as you have working box to test it on (!).
 
 ### Currently Officially Tested Configurations
 sixit/sarge CI Tier 1 (cannot merge to trunk unless CI passes):
@@ -104,14 +107,13 @@ NB: we MAY consider generating a non-header-only version, IF there is a SUBSTANT
 - MAYBE: adding support for WASM32
 
 ## Other sixit libs we already have and plan to release soon:
-- sixit/dmath - cross-platform deterministic math lin
+- sixit/dmath - cross-platform deterministic math lib (as ~~seen on TV~~ presented on CppCon24)
 - sixit/geometry - geometrical primitives and algorithms (both 2D and 3D), with cross-platform deterministic support
-- sixit/rw - serialization lib aiming top efficiency, and able to support ABSOLUTELY ANY format (JSON, protobuf, custom binary competing with FlatBuffers and Cap'nProto, ypu name it). Also supports arbitrary hashing (as a pseudo-serialization). 
-- sixit/graphics - comprehensive support for meshes (incl. skinning), textures, etc. Materials are PBR-only though. Also will contain basic helpers such as decimator half-edge-oriented framework (based directly on [A General Framework for Mesh Decimation
-](https://www.graphics.rwth-aachen.de/media/papers/mesh.pdf)).
+- sixit/rw - serialization lib aiming top efficiency, and able to support ABSOLUTELY ANY format (JSON, protobuf, custom binary competing speed-wise with FlatBuffers and Cap'nProto, you name it). Also supports arbitrary hashing (as a pseudo-serialization), including crypto-quality hashing (BLAKE2 ATM, more to be added). 
+- sixit/graphics - comprehensive support for meshes (incl. skinning), textures, etc. Materials are PBR-only though. Also will contain basic helpers such as decimator half-edge-oriented framework (based directly on [A General Framework for Mesh Decimation](https://www.graphics.rwth-aachen.de/media/papers/mesh.pdf)).
 - sixit/physics - simple physics, with cross-platform deterministic support
    + currently only rigid body physics , but we plan to add more
-- sixit/osal - os abstraction library; abstracts less common features which are not a part of the std:: (yet?).
+- sixit/osal - os abstraction library; abstracts less common OS features which are not a part of the std:: (yet?).
 - sixit/wasm - abstracting wasm engines (the same host can use any of supported engines, from wasm3 to wasm2c, with adding more being easy)
 
 ### CI
