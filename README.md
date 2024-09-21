@@ -30,7 +30,8 @@ NB: we MAY consider generating a non-header-only version, IF there is a SUBSTANT
 - releasing sixit/core/containers, sixit/lwa/constexpr_vector.
 - releasing sixit/core/profiler, ideally with file support (enabling simple Zabbix/Nagios monitoring)
 - additional loggers: file logger, combining adapter, optional wrapper for spdlog.
-- improving+expanding sixit/units: adding systems template parameter, adding SI, CGS, and Imperial systems (no CGS-E or CGS-M ATM), defaulting to SI, adding popular units for L, T, and M related to these systems, adding units maths.
+- improving+expanding sixit/units: adding systems template parameter, adding Units, SI, CGS, and Imperial systems (no CGS-E or CGS-M ATM), defaulting to SI, adding popular units for L, T, and M related to these systems, adding units maths.
    + Imperial will use inch, second, and ounce as base units for L, T, and M respectively (Rationale to use inch/ounce and not say foot/pound is to avoid unnecessary ugly fractions as long as it is reasonable; inch and foot represented as 1 and 12 is much better than having them represented as 0.083333333 and 1 respectively). 
+   + Units is a special pseudo-system, with no ability to convert it to anything else, can be used for purely abstract things (for example, for pure geometry we usually don't care what the units really are)
 - releasing rudimentary sixit/core/compileral
 - MAYBE: adding support for WASM32
